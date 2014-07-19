@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file://SERVER2008/xampp/htdocs/greencometdev/protected/components/CommonUtility.php</file>
+            <file>file://SERVER2008/xampp/htdocs/greencometdev/protected/views/front/poster/createtask.php</file>
+            <file>file://SERVER2008/xampp/htdocs/greencometdev/protected/models/Category.php</file>
+            <file>file://SERVER2008/xampp/htdocs/greencometdev/protected/controllers/back/CategoryController.php</file>
+            <file>file://SERVER2008/xampp/htdocs/greencometdev/protected/config/front.php</file>
+            <file>file://SERVER2008/xampp/htdocs/greencometdev/protected/models/BlockedIp.php</file>
+            <file>file://SERVER2008/xampp/htdocs/greencometdev/protected/components/UtilityHtml.php</file>
+            <file>file://SERVER2008/xampp/htdocs/greencometdev/protected/controllers/front/PosterController.php</file>
+            <file>file://SERVER2008/xampp/htdocs/greencometdev/css/front/stylegc.css</file>
+            <file>file://SERVER2008/xampp/htdocs/greencometdev/protected/views/front/poster/partial/_virtual_task_detail_from.php</file>
+            <file>file://SERVER2008/xampp/htdocs/greencometdev/protected/views/front/poster/partial/_inperson_task_detail_from.php</file>
+            <file>file://SERVER2008/xampp/htdocs/greencometdev/protected/components/Globals.php</file>
+        </group>
+    </open-files>
+</project-private>

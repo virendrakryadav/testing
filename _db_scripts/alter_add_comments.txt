@@ -1,0 +1,77 @@
+ALTER TABLE `gc_mst_category` CHANGE `is_virtual` `is_virtual` BIT( 1 ) NOT NULL DEFAULT b'1' COMMENT 'belongs to virtual task',
+CHANGE `is_inperson` `is_inperson` BIT( 1 ) NOT NULL DEFAULT b'1' COMMENT 'belongs to inperson task',
+CHANGE `is_instant` `is_instant` BIT( 1 ) NOT NULL DEFAULT b'1' COMMENT 'belongs to instant task';
+
+
+
+ALTER TABLE `gc_dta_task` CHANGE `payment_mode` `payment_mode` CHAR( 1 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'f = fixed price, b = bidding';
+
+ALTER TABLE `gc_dta_task` CHANGE `preferred_location` `preferred_location` CHAR( 1 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'r = regison, c = country, null = means no preference. Applicable in Virtual type task';
+
+ALTER TABLE `gc_dta_task` CHANGE `tasker_in_range` `tasker_in_range` INT( 4 ) NULL DEFAULT NULL COMMENT 'tasker_in_range - an int value that can be interprated as miles or time to drive as required';
+
+ALTER TABLE `gc_dta_user_work_hours` CHANGE `day` `day` INT( 1 ) NOT NULL DEFAULT '0' COMMENT '0 - sun, 1 - mon, 2 - tue and son on',
+CHANGE `start_hour` `start_hour` CHAR( 4 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '24 hour clock and value is always 4 digits such 0930 (means 9.30 AM), 1330 means 1.30PM) etc',
+CHANGE `end_hour` `end_hour` CHAR( 4 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '24 hour clock and value is always 4 digits such 0930 (means 9.30 AM), 1330 means 1.30PM) etc',
+CHANGE `status` `status` CHAR( 1 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'a' COMMENT 'a = means record can be used for checking the working hours on a day';
+
+ALTER TABLE `gc_mst_category_locale` CHANGE `task_templates` `task_templates` VARCHAR( 2000 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'array of json objects like [{title:"Wants some for ....",desc:"I need a person or a group"}]';
+
+ALTER TABLE `gc_dta_task` CHANGE `tasker_id_source` `tasker_id_source` VARCHAR( 10 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'decided by the user or system or by bidding values can be ''user'', ''auto'', ''bid''';
+
+
+ALTER TABLE `gc_mst_category_question` CHANGE `question_type` `question_type` CHAR( 1 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'l' COMMENT 'l = logical answer, v = online verification purpose, d = descriptive answer';
+
+ALTER TABLE `gc_mst_category_question` CHANGE `question_for` `question_for` CHAR( 1 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 't' COMMENT 'p = poster to provide answer, t = tasker to provide answer, b = both poster and tasker to provide answer under for category';
+
+ALTER TABLE `gc_mst_category_question` CHANGE `is_answer_must` `is_answer_must` BIT( 1 ) NOT NULL DEFAULT b'0' COMMENT 'true = answer of this question is REQUIRED from the "question_for" column value basis. False means no';
+
+
+ALTER TABLE `gc_dta_task` CHANGE `creator_role` `creator_role` CHAR( 1 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 't' COMMENT 't = tasker, p = poster';
+
+
+ALTER TABLE `gc_dta_task` CHANGE `creator_user_id` `creator_user_id` BIGINT( 20 ) NOT NULL COMMENT 'task is created by which user. In case of external task. User wants to add task posted or completed out side the Green Comet';
+
+ALTER TABLE `gc_dta_task` CHANGE `is_external` `is_external` BIT( 1 ) NOT NULL DEFAULT b'0' COMMENT 'true means Task is done out side Green Comet';
+
+ALTER TABLE `gc_dta_task` CHANGE `language_code` `language_code` VARCHAR( 5 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'language of the task, One task will be posted in one language only by the poster';
+
+ALTER TABLE `gc_dta_task` CHANGE `state` `state` VARCHAR( 2 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'o' COMMENT 'o = open for bid, c = cancelled, a = assigned to tasker, f = finished, d = under dispute, s = suspended';
+
+ALTER TABLE `gc_dta_task` CHANGE `attachments` `attachments` VARCHAR( 1000 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'ARRAY of JSON objects [{"type":"<attachment_type>", "file":"<filename>","upload_on":"<date of upload>"}], type can be ''p''- pdf, ''w'' - word, ''a''- audio, ''v''-video, ''i'' - image';
+
+ALTER TABLE `gc_dta_task` CHANGE `tasker_user_id` `tasker_user_id` BIGINT( 20 ) NULL DEFAULT NULL COMMENT 'can be same as creator_user_id';
+
+
+ALTER TABLE `gc_dta_task_category` CHANGE `category_id` `category_id` INT( 11 ) NOT NULL COMMENT 'under which main category the task is posted. A task can be posted under one or more categories';
+
+
+ALTER TABLE `gc_dta_task_category` CHANGE `language_code` `language_code` VARCHAR( 5 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'to avoid join with gc_dat_task column, it is maintained in this table also';
+
+
+ALTER TABLE `gc_dta_task_category` CHANGE `status` `status` CHAR( 1 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'o' COMMENT 'o = open for bidding, c = cancelled, p = in progress, f = finished in time, d = under dispute, l = late finished';
+
+
+ALTER TABLE `gc_dta_task_tasker` CHANGE `status` `status` CHAR( 1 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'a' COMMENT '''a'' means active, ''s'' - selected - ''r'' rejected, ''d'' drafted';
+
+
+ALTER TABLE `gc_dta_task_tasker` CHANGE `selection_type` `selection_type` VARCHAR( 10 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'inv (invited by poster), bid (bidding by poster), auto (auto selected by system), repeat (repeated the tasker)',
+CHANGE `source_app` `source_app` VARCHAR( 10 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'such as web, android, iOs etc. Usefull to know the data input channel';
+
+ALTER TABLE `gc_dta_task_activity` CHANGE `activity_type` `activity_type` VARCHAR( 20 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'can be post, del, publice, etc',
+CHANGE `activity_subtype` `activity_subtype` VARCHAR( 100 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'used to hold activity sepecific data such as task category',
+CHANGE `comments` `comments` VARCHAR( 1000 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'used to hold any activity related details, if required. E.g any error reason';
+
+
+ALTER TABLE `gc_dta_user_alert` CHANGE `alert_id` `alert_id` BIGINT(20) NOT NULL AUTO_INCREMENT, CHANGE `alert_type` `alert_type` VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, CHANGE `alert_desc` `alert_desc` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'if required to set description of an alert, otherwise, based on alert_type, desc can be generated', CHANGE `for_user_id` `for_user_id` BIGINT(20) NOT NULL COMMENT 'alter is for which user', CHANGE `by_user_id` `by_user_id` BIGINT(20) NULL DEFAULT NULL COMMENT 'alert caused by some user like viewed for_user_id profile  ', CHANGE `task_tasker_id` `task_tasker_id` BIGINT(20) NULL DEFAULT NULL COMMENT 'can be available, if alert is related to task such as bid received, task invitation, task allocation, task_rejection, profile viewed by etc', CHANGE `is_seen` `is_seen` BIT(1) NOT NULL DEFAULT b'0' COMMENT 'false means ''for_user_id'' has not seen the alert yet', CHANGE `seen_at` `seen_at` TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'when ''for_user_id'' has seen the alert?', CHANGE `seen_from_source_app` `seen_from_source_app` VARCHAR(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'from where ''for_user_id'' has seen it', CHANGE `source_app` `source_app` VARCHAR(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL;
+
+
+
+
+
+
+
+
+
+
+

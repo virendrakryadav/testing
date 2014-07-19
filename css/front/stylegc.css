@@ -1,0 +1,196 @@
+@charset "utf-8";
+/* CSS Document */
+.activeCategory 
+{
+    color: #019373 !important;
+    font-weight: bold;
+}
+.image80by80 { height: 80px; width: 80px }
+#taskType .bx-wrapper .bx-viewport {
+    height: 126px !important;
+}
+.nav-menu-hoheader  > li > a 
+{
+    padding: 0 0 !important;
+}
+.nav-menu-hoheader  > li > a  .caret 
+{
+    display: none;
+}
+.project-search-new-1 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #D9DADA;
+    border-radius: 10px;
+    float: left;
+    height: 35px;
+    margin-right: 24px;
+    width: 88.3%;
+}
+.post-message-reply-popup
+{
+    height: 30% !important;
+    padding: 20px !important;
+    top: 25% !important;
+    width: 63% !important;
+}
+.fade.fade-in-alert
+{
+    opacity: 1;
+    
+}
+.postedbyAttachments{ padding:0 10px 0 0; float:left; color:#333333;}
+.postedbyAttachments a{color:#0088CC; text-decoration:none;}
+.postedbyAttachments a:hover{text-decoration:none;}
+.mrg-child-ul ul{ margin: 0 !important; 
+    padding: 0 !important; }
+.task-cancel-popup{ height : 43%;}
+.apply-popup 
+{
+    bottom: 0;
+    position: fixed !important; 
+    right: 0;
+    z-index: 2005; width:830px !important;
+}
+.categoryScroll 
+{
+    height: 260px;
+    width: 100% !important; 
+}
+.applyPopupProjectLive 
+{
+    height: 260px;
+    width: 100% !important; 
+}
+ 
+#popup_container.style_1 
+{
+    font-family: Georgia, serif;
+    color: #A4C6E2;
+    background: #005294;
+    border-color: #113F66;
+}
+
+#popup_container.style_1 #popup_title {
+    color: #FFF;
+    font-weight: normal;
+    text-align: left;
+    background: #76A5CC;
+    border: solid 1px #005294;
+    padding-left: 1em;
+}
+
+#popup_container.style_1 #popup_content {
+    background: none;
+}
+
+#popup_container.style_1 #popup_message {
+    padding-left: 0em;
+}
+
+#popup_container.style_1 INPUT[type='button'] {
+    border: outset 2px #76A5CC;
+    color: #A4C6E2;
+    background: #3778AE;
+}
+#popup_overlay
+{
+    opacity: 0.16 !important; 
+    background: none repeat scroll 0 0 #000 !important; 
+}
+.social_share_popover{
+    width: 58px;
+}
+.sky-form .not-sky-check .radio input, .sky-form .checkbox input
+{
+    left: 0;
+    position: inherit;
+}
+#applyProposal-minimize .jspPane , #applyProposal-minimize .jspContainer{
+  
+    width: 768px !important;
+}
+.upload-img2
+{
+    margin: 0 0 15px;
+}
+.clr-padding-upload{
+    clear: both;
+    padding: 15px 0 0;
+}
+.tasker_row3{ padding:10px}
+.r-row2-reviews { float: right;width: 46%;}
+.review-title-row1 { color: #000; float: left;  font-size: 16px; line-height: 50px; width: 53%;   }
+
+#loadcategory .jspPane , #loadcategory .jspContainer{
+  
+    width: 252px !important;
+}
+.reply_col1-noover {
+    margin: 0 0 10px;
+   
+}
+#listScrollTask{
+    height: 710px;
+}
+#messagesListOfTask{
+    height: 280px;
+}
+.errorBorder
+{
+/*  //  b : #B94A48 !important*/
+border-color: #B94A48 !important;
+}
+.subCatInPopupInst .task_cat {
+    width: 154px;
+}
+.w-300
+{
+    width:300px !important;
+}
+.gridViewTitle
+{
+    width: 300px;
+    
+}
+.gridViewTitle:after{
+    content:" ...";
+}
+.reply_col1 textarea#Inbox_body
+{
+    height:100px;
+}
+.fileupload-messages
+{
+    position: absolute;
+    bottom: 57px;
+    overflow:hidden;
+    width: 95.7%;
+}
+#replyDiv
+{
+    position:relative;
+}
+.project-filter ul li span {
+    color: #000;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 2px;
+    padding: 6px 12px;
+    text-decoration: none;
+}
+.project-filter ul li span:hover{background: none repeat scroll 0 0 #FFFFFF;border-color: #D9DADA #FFFFFF #D9DADA #0088CC;border-left: 3px solid #0088CC; border-style: solid;border-width: 1px 0px 1px 3px;display: block;padding: 5px 10px 5px 9px; color:#0088cc;}
+.project-filter ul li span.active{background: none repeat scroll 0 0 #FFFFFF;border-color: #D9DADA #FFFFFF #D9DADA #0088CC;border-left: 3px solid #0088CC; border-style: solid;border-width: 1px 0px 1px 3px;display: block;padding: 5px 10px 5px 9px; color:#0088cc; font-weight:bold;}
+.list-col .proposal_col4
+{
+    padding: 4px 10px 0 0;
+}
+.tasker_tasklist #taskerlist .showing input {
+    float: left;
+    line-height: 0;
+    margin: 6px 9px 0 10px;
+    padding: 0 9px 0 3px;
+}
+.tasker_tasklist #taskerlist .showing label {
+    font-weight: normal;
+}
+/*ui-tooltip ui-widget ui-corner-all ui-widget-content*/

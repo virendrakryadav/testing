@@ -1,0 +1,12 @@
+field for average proposals price and tasker's average rating
+ALTER TABLE `gc_dta_task` ADD `proposals_avg_rating` DECIMAL( 3, 2 ) NULL AFTER `proposals_accpt_cnt` ,
+ADD `proposals_avg_price` DECIMAL( 12, 2 ) NULL AFTER `proposals_avg_rating` ;
+
+
+field for user verification by email
+ALTER TABLE `gc_dta_user` ADD `verification_code` VARCHAR( 50 ) NULL AFTER `is_verified` ;
+
+ALTER TABLE `gc_dta_task` CHANGE `proposals_avg_price` `proposals_avg_price` DECIMAL( 12, 2 ) NOT NULL DEFAULT '0';
+
+#field to maiantain verification status by owner of outside task
+ALTER TABLE `gc_dta_task` ADD `ref_verification_status` CHAR( 1 ) NULL DEFAULT 'p' AFTER `ref_done_by_user_id` ;

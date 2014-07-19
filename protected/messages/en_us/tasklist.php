@@ -1,0 +1,35 @@
+<?php
+return array (
+'msg_no_task_found'=>'No project found matching your search criteria.',
+'msg_no_tasker_found'=>'No doer found matching your search criteria.',
+'lbl_invited'=>'Invited',
+'txt_no_filters_found'=>'No filters found',
+'Premium'=>'Premium',
+'Read More'=>'Read More',
+'Read Less'=>'Read Less',
+'Filter'=>'Filter',
+'Unset bookmark'=>'Unset bookmark',
+'Set bookmark'=>'Set bookmark',
+'No proposal found matching your search criteria' => 'No proposal found matching your search criteria.',
+    
+'View Proposal'=>'View Proposal',
+'view portfolio'=>'View portfolio',
+'Found {count} tasks'=>'Found {count} projects',
+'you invited'=>'You invited',
+'you not invited'=>'You not invited',
+'You hired'=>'You hired',
+'You not hired'=>'You not hired',
+'Add to favorite list'=>'Add to favorite list',
+'Remove from favorite list'=>'Remove from favorite list',
+    
+'Found {count} doers' =>'Found {count} doers',
+'txt_search_projects'=> 'Search Projects',
+    'txt_applied_to' => 'Applied To',
+    'txt_saved_projects' => 'Saved Projects',
+    'txt_active_projects' => 'Active Projects',
+    'txt_completed_projects' => 'Completed Projects',
+    'txt_all_projects' => 'All Projects',
+    'txt_no_project_found' => 'There is no project found in',
+    'txt_search' => 'Search',
+);
+

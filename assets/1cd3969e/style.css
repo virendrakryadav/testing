@@ -1,0 +1,35 @@
+.social-provider-icon {
+/*	background-image: url('icons.png');*/
+	background-repeat: no-repeat;
+	width: 40px;
+	height: 40px;
+	display: block;
+	float: left;
+	border: none !important;
+	cursor: pointer;
+	text-decoration: none;
+	margin-right: 5px;
+}
+.social-provider-icon:hover {
+	text-decoration: none;
+}
+
+.social-provider-icon.twitter {
+	background-image: url('twit-icon.png');
+}
+.social-provider-icon.google {
+	background-image: url('google-icon.png');
+}
+.social-provider-icon.facebook {
+	background-image: url('fb-icon.png');
+}
+.social-provider-icon.pinterest {
+	background-image: url('pin-icon.png');
+}
+.social-provider-icon.linkedin {
+	background-image: url('in-icon.png');
+}
+.share_link a {
+    float: left;
+    margin: 15px 10px 0;
+}

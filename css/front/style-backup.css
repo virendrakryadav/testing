@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+    font-family: 'RobotoRegular';
+    src: url('./font/roboto-regular.eot');
+    src: url('./font/roboto-regular.eot') format('embedded-opentype'),
+         url('./font/roboto-regular.woff') format('woff'),
+         url('./font/roboto-regular.ttf') format('truetype'),
+         url('./font/roboto-regular.svg#RobotoRegular') format('svg');
+}
+img{ border:none;}
+body { font-family:RobotoRegular; color:#333333; font-size:12px; margin:0px; padding:0px; background:#fff; }
+/*.............Commen css............*/
+.wrapper{ width:100%; height:auto; margin:0 auto; /*position:relative;*/}
+.content_wrap{ width:1172px; height:auto; margin:0 auto;}
+
+/*.............Header css............*/
+
+.header{padding:23px 0; background:#333333; overflow:hidden; border:solid 1px #666666;}
+.logo{ float:left;}
+.needhelp{ float:left; padding:2px 0 0 60px;}
+.needhelp a{font-size:16px; color:#fff; text-decoration:none; }
+.needhelp a:hover{font-size:16px; color:#fff; text-decoration: underline;}
+.signin_cont{ float:right;}
+.signin{ float:left; padding:2px 0 0 23px;}
+.signin a{ color:#fff; text-transform:uppercase; font-size:13px; font-weight:bold; text-decoration:none; }
+.signin a:hover{ color:#52a072;}
+
+
+/*.............create account css............*/
+
+.sign_bg{ width:100%; background:url(../images/user-account-bg.jpg) no-repeat center; background-size:100%; height:768px;}
+.create_account{ width:970px; height:auto; margin:0px auto; overflow:hidden;}
+.create_account_popup{ width:100%; height:auto; min-height:528px; margin:70px auto; overflow:hidden; background:#fff; box-shadow: 0px 2px 6px #4f4f4f;}
+.popup_head{padding:11px 20px; background:#2d8752; overflow:hidden;}
+.popup_head span{ float:right; border:none; margin:5px 0;}
+.heading{ margin:0px; padding:0px; color:#fff; font-size:24px; float:left;}
+.create_acunt_inner{height:auto;margin:0px auto; overflow:hidden; padding:20px;}
+.create_acunt_left{height:auto; width:465px; float:left;}
+.create_acunt_col1{height:auto; width:465px; float:left; padding:0 0 20px 0;}
+.create_log_fb{height:auto; width:465px; float:left;}
+.create_acunt_right{height:auto; width:380px; float:right;}
+.sign_form{ width:330px; float:left;}
+.sign_form p{ margin:0px; padding:20px 0 0 0; font-size:14px;}
+.sign_row{ width:100%; float:left; padding:20px 0 0 0;}
+.sign_row input{ width:90%;padding:15px; border:solid 1px #bdbcbd; background:#f7f7f7;}
+.sign_row2 input{ margin:-2px 10px 0 0;}
+.sign_row2{ width:100%; float:left; padding:20px 0 0 0; font-size:14px;}
+.bluetext{ color:#0088cc;}
+.sign_bnt{ padding:7px 9px; background:#0088cc; font-size:16px; color:#fff; border:none; cursor:pointer;}
+.sign_bnt:hover{background:#333333;}.lightbox { display: none; }

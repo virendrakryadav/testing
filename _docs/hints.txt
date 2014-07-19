@@ -1,0 +1,49 @@
+Check if any attributes are set for /etc/yum.conf
+[root@server]# lsattr /etc/yum.conf
+—-i——–e- /etc/yum.conf
+
+
+
+edit file using nano
+
+nano /etc/yum.conf
+
+
+
+To clean
+
+yum clean all
+
+
+
+Yum: How can I view variables like $releasever, $basearch & $YUM0?
+
+[root@somebox]# python -c 'import yum, pprint; yb = yum.YumBase(); pprint.pprint(yb.conf.yumvar, width=1)'
+{'arch': 'ia32e',
+ 'basearch': 'x86_64',
+ 'releasever': '5',
+ 'yum0': '200',
+ 'yum5': 'foo'}
+[root@somebox]# 
+
+
+
+http://alsogo.com/?p=500
+
+Question:Yum Error: Cannot find a valid baseurl for repo: base – centos 6
+
+Answer:
+
+Exclude DNS Server problem
+If fail to ping www.google.com ,thenvi /etc/resolv.confInsert the following text
+nameserver 208.67.222.222
+nameserver 208.67.220.220
+Correct yum configuration
+vi /etc/yum.repos.d/CentOS-Base.repo
+
+uncommented all the mirrorlist= lines and comment out all the baseurl= lines
+for example: 
+mirrorlist=http://mirrorlist.centos.org/..
+#baseurl=http://mirror.centos.org/….
+
+ 

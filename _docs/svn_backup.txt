@@ -1,0 +1,13 @@
+C:\Users\gautam>cd ..
+
+C:\Users>cd ..
+
+C:\>cd Program Files (x86)/VisualSVN Server/bin/
+
+C:\Program Files (x86)\VisualSVN Server\bin>svnadmin dump e:/Repositories/greenc
+ometdev > e:/greencometsvn_backup.dump
+
+
+http://192.168.1.200:8080/db_backup/svn.php
+
+http://192.168.1.200:8080/db_backup/

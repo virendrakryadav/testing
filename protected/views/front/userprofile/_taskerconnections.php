@@ -1,0 +1,3 @@
+<h4><?php echo CHtml::encode(Yii::t('poster_confirmtask', 'lbl_connections')) ?>&nbsp<?php //echo CommonUtility::getUserFullName($model->{Globals::FLD_NAME_USER_ID}); ?>&nbsp</h4>
+ Comming soon...
+ 

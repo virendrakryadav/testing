@@ -1,0 +1,53 @@
+
+#table to maintain task attributes
+CREATE TABLE `gc_dta_task_attrib` (
+task_id bigint(20) DEFAULT NULL COMMENT 'attribute related to which task?',
+attrib_type varchar(50) DEFAULT NULL COMMENT 'attribute type such as task_question',
+attrib_subtype varchar(50) DEFAULT NULL,
+attrib_desc varchar(50) DEFAULT NULL,
+`val_bigint` bigint(20) DEFAULT NULL COMMENT 'Long integer value',
+  `val_int` int(11) DEFAULT NULL COMMENT 'Integer value',
+  `val_real` decimal(15,2) DEFAULT NULL COMMENT 'real value',
+  `val_str` varchar(8000) DEFAULT NULL COMMENT 'string value, for example custom question related data',
+  `val_dt` datetime DEFAULT NULL COMMENT 'date value',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_by` bigint(20) NOT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `updated_by` bigint(20) DEFAULT NULL,
+  `source_app` varchar(10) DEFAULT NULL,
+  `status` char(1) DEFAULT 'a',
+  PRIMARY KEY (`task_id`,`attrib_type`,`attrib_desc`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='This table holds task attributes which are created on need basis and not always required for each task. for example, custom question etc.'
+
+#added new field to manage admin access in front end 
+ALTER TABLE `gc_mst_userrole` ADD `is_frontrole` TINYINT( 1 ) NULL DEFAULT '0' AFTER `role_id` ;
+
+ALTER TABLE `gc_dta_user` ADD `user_front_role_id` INT( 11 ) NULL DEFAULT NULL AFTER `user_roleid` ;
+
+
+ALTER TABLE `gc_dta_user_activity` ADD `of_user_id` BIGINT( 20 ) NOT NULL AFTER `by_user_id` ;
+ALTER TABLE `gc_dta_user_activity` ADD `from_ip` VARCHAR( 30 ) NULL AFTER `comments` ;
+ALTER TABLE `gc_dta_task_activity` ADD `from_ip` VARCHAR( 30 ) NULL AFTER `comments` ;
+ALTER TABLE `gc_dta_task` ADD `max_price` DECIMAL( 12, 2 ) NULL DEFAULT NULL AFTER `price` ;
+ALTER TABLE `gc_dta_task` ADD `is_highlighted` TINYINT( 1 ) NOT NULL DEFAULT '0' AFTER `task_cancel_reason` ;
+ALTER TABLE `gc_dta_task` ADD `is_premium_task` TINYINT( 1 ) NOT NULL DEFAULT '0' AFTER `is_highlighted` ;
+
+#Increased end time character length from 4 to 5  to maintain ':' for hour and minute separation
+ALTER TABLE `gc_dta_task` CHANGE `start_time` `start_time` CHAR( 5 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
+CHANGE `end_time` `end_time` CHAR( 5 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ;
+
+#added primary email and primary phone in user table as well in user_contacts table to reduce queries while sending email and notifications
+ALTER TABLE `gc_dta_user` ADD `primary_email` VARCHAR( 200 ) NULL AFTER `password` ;
+ALTER TABLE `gc_dta_user` ADD `primary_phone` VARCHAR( 20 ) NULL AFTER `primary_email` 
+
+
+ALTER TABLE `gc_dta_task_question_reply` ADD `task_question_id` BIGINT( 20 ) NULL FIRST ;
+
+# to determine if instant task is auto, bid 
+ALTER TABLE `gc_dta_task` ADD `selection_type` VARCHAR( 10 ) NULL AFTER `is_premium` ;
+
+# average price of completed task
+ALTER TABLE `gc_dta_user` ADD `task_done_avg_price` INT( 11 ) NOT NULL DEFAULT '0' AFTER `task_done_total_price` ;
+
+#subcategory counter manage
+ALTER TABLE `gc_mst_category` ADD `subcategory_cnt` INT( 11 ) NOT NULL DEFAULT '0' AFTER `parent_id` ;

@@ -1,0 +1,229 @@
+ALTER TABLE `gc_dta_task` DROP `location_region_id` ,
+DROP `location_street1` ,
+DROP `location_street2` ,
+DROP `location_country_code` ,
+DROP `location_state_id` ,
+DROP `location_city_id` ,
+DROP `location_zipcode` ,
+DROP `location_longitude` ,
+DROP `location_latitude` ,
+DROP `location_geo_area` ,
+DROP `is_location_region` 
+
+
+
+Date: 05-03-2014
+
+ALTER TABLE `gc_mst_category_question_locale` ADD `expected_answer_logical` BIT( 1 ) NOT NULL DEFAULT b'0' AFTER `question_desc` ;
+
+ALTER TABLE `gc_mst_category_question_locale` ADD `expected_answer_desc` VARCHAR( 500 ) NULL AFTER `expected_answer_logical` ;
+
+
+Date: 07-03-2014
+
+ALTER TABLE `gc_dta_task_tasker` ADD `attachments` VARCHAR( 1000 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL AFTER `poster_comments` ;
+
+
+#removed defaul value from 0.000 to NULL
+ALTER TABLE `gc_dta_task_tasker` CHANGE `proposed_cost` `proposed_cost` DECIMAL( 10, 3 ) NULL DEFAULT NULL COMMENT 'Cost proposed by the tasker';
+
+
+Date: 10-03-2014
+ALTER TABLE `gc_dta_user_speciality` CHANGE `category_id` `skill_id` INT( 11 ) NOT NULL ;
+
+
+ALTER TABLE `gc_dta_user` ADD `login_name` VARCHAR( 75 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER `firstname` ;
+
+
+ALTER TABLE `gc_dta_user` ADD `user_roleid` INT( 11 ) NULL AFTER `user_id` ;
+
+
+ALTER TABLE `gc_dta_user` ADD `is_admin` BIT( 1 ) NOT NULL DEFAULT b'0' AFTER `user_roleid` ;
+
+ALTER TABLE `gc_dta_user` DROP `created_by_admin_id`;
+
+ALTER TABLE `gc_dta_user` DROP `updated_by_admin_id` ;
+
+
+ALTER TABLE gc_mst_adminuser DROP FOREIGN KEY gc_mst_adminuser_ibfk_2;
+ALTER TABLE gc_mst_adminuser DROP KEY fk_adminuser_createdby;
+
+
+ALTER TABLE gc_mst_adminuser DROP FOREIGN KEY gc_mst_adminuser_ibfk_3;
+ALTER TABLE gc_mst_adminuser DROP KEY fk_adminuser_updatedby;
+
+
+
+#impact by 
+ALTER TABLE gc_dta_task DROP COLUMN ref_done_by_admin_id;
+
+ALTER TABLE `gc_dta_user` ADD FOREIGN KEY `fk_user_role` ( `user_roleid` ) REFERENCES `gc_mst_userrole` ( `role_id` ) ON UPDATE CASCADE;
+
+
+ALTER TABLE `gc_mst_category_locale` DROP FOREIGN KEY `fk_categorylocale_updatedby` ;
+
+ALTER TABLE `gc_mst_category_locale` ADD FOREIGN KEY `fk_categorylocale_updatedby` (`updated_by`) REFERENCES `gc_dta_user` ( `updated_by_user_id` ) ON UPDATE CASCADE;
+
+
+ALTER TABLE `gc_mst_category_question_locale` DROP FOREIGN KEY `fk_category_question_locale_updated_by` ;
+
+ALTER TABLE `gc_mst_category_question_locale` ADD FOREIGN KEY `fk_category_question_locale_updated_by` (`updated_by`) REFERENCES `gc_dta_user` ( `user_id` ) ON UPDATE CASCADE;
+
+
+
+
+ALTER TABLE `gc_mst_city_locale` DROP FOREIGN KEY `fk_citylocale_createdby`;
+
+ALTER TABLE `gc_mst_city_locale` ADD FOREIGN KEY `fk_citylocale_createdby` (`created_by`) REFERENCES `gc_dta_user` ( `user_id` ) ON UPDATE CASCADE;
+
+
+ALTER TABLE `gc_mst_city_locale` DROP FOREIGN KEY `fk_citylocale_updatedby`;
+
+ALTER TABLE `gc_mst_city_locale` ADD FOREIGN KEY `fk_citylocale_updatedby` (`updated_by`) REFERENCES `gc_dta_user` ( `user_id` ) ON UPDATE CASCADE;
+
+
+
+ALTER TABLE `gc_mst_country_locale` DROP FOREIGN KEY `fk_citylocale_createdby`;
+
+ALTER TABLE `gc_mst_country_locale` ADD FOREIGN KEY `fk_citylocale_createdby` (`created_by`) REFERENCES `gc_dta_user` ( `user_id` ) ON UPDATE CASCADE;
+
+
+ALTER TABLE `gc_mst_country_locale` DROP FOREIGN KEY `fk_countrylocale_updatedby`;
+
+ALTER TABLE `gc_mst_country_locale` ADD FOREIGN KEY `fk_countrylocale_updatedby` (`updated_by`) REFERENCES `gc_dta_user` ( `user_id` ) ON UPDATE CASCADE;
+
+
+
+ALTER TABLE `gc_mst_language` ADD FOREIGN KEY `fk_language_createdby` (`created_by`) REFERENCES `gc_dta_user` ( `user_id` ) ON UPDATE CASCADE;
+
+ALTER TABLE `gc_mst_language` ADD FOREIGN KEY `fk_language_updatedby` (`updated_by`) REFERENCES `gc_dta_user` ( `user_id` ) ON UPDATE CASCADE;
+
+
+ALTER TABLE `gc_mst_region_locale` ADD FOREIGN KEY `fk_regionlocale_createdby` (`created_by`) REFERENCES `gc_dta_user` ( `user_id` ) ON UPDATE CASCADE;
+
+ALTER TABLE `gc_mst_region_locale` ADD FOREIGN KEY `fk_regionlocale_updatedby` (`updated_by`) REFERENCES `gc_dta_user` ( `user_id` ) ON UPDATE CASCADE;
+
+ALTER TABLE `gc_mst_state_locale` ADD FOREIGN KEY `fk_statelocale_createdby` (`created_by`) REFERENCES `gc_dta_user` ( `user_id` ) ON UPDATE CASCADE;
+
+ALTER TABLE `gc_mst_state_locale` ADD FOREIGN KEY `fk_statelocale_updatedby` (`updated_by`) REFERENCES `gc_dta_user` ( `user_id` ) ON UPDATE CASCADE;
+
+
+
+
+
+
+
+
+
+ALTER TABLE `gc_mst_adminuser` DROP FOREIGN KEY gc_mst_adminuser_ibfk_1
+
+
+ALTER TABLE `gc_mst_adminuser` DROP FOREIGN KEY gc_mst_adminuser_ibfk_1
+
+ALTER TABLE `gc_dta_user` ADD KEY `fk_user_role` (`user_roleid`);
+
+ALTER TABLE `gc_dta_user`
+  ADD CONSTRAINT `gc_dta_user_ibfk_1` FOREIGN KEY (`user_roleid`) REFERENCES `gc_mst_userrole` (`role_id`) ON UPDATE CASCADE;
+
+
+19-03-2014
+
+ALTER TABLE `gc_dta_user_alert` ADD FOREIGN KEY `fk_for_user_id` ( `for_user_id` ) REFERENCES `gc_dta_user` ( `user_id` ) ON UPDATE CASCADE;
+
+ALTER TABLE `gc_dta_user_alert` ADD FOREIGN KEY `fk_by_user_id` ( `by_user_id` ) REFERENCES `gc_dta_user` ( `user_id` ) ON UPDATE CASCADE 
+
+
+ALTER TABLE `gc_dta_user_alert` ADD FOREIGN KEY `fk_created_by` ( `created_by` ) REFERENCES `gc_dta_user` ( `user_id` ) ON UPDATE CASCADE;
+
+ALTER TABLE `gc_dta_user_alert` CHANGE `updated_by` `updated_by` BIGINT( 20 ) NULL ;
+
+ALTER TABLE `gc_dta_user_alert` ADD FOREIGN KEY `fk_updated_by` ( `updated_by` ) REFERENCES `gc_dta_user` ( `user_id` ) ON UPDATE CASCADE 
+
+# added 2 new columns to manage review comments by tasker and poster. There would be single review by each.
+ALTER TABLE `gc_dta_task` ADD `tasker_review_comments` VARCHAR( 2000 ) NULL AFTER `proposals_cnt` ,
+ADD `poster_review_comments` VARCHAR( 2000 ) NULL AFTER `tasker_review_comments` ;
+
+#added index on `for_user_id` and `is_seen`
+
+ALTER TABLE `gc_dta_user_alert` ADD INDEX gc_dta_user_alert_foruserid_isseen( `for_user_id` , `is_seen` ) 
+
+#add column `task_tasker_id` to reduce join with gc_dta_task_tasker table
+ALTER TABLE gc_dta_task ADD COLUMN task_tasker_id bigint( 20 ) COMMENT 'to reduce join with task_tasker_id' AFTER `task_finished_on` 
+
+ALTER TABLE gc_dta_task ADD COLUMN task_assigned_on datetime COMMENT 'to reduce join with task_tasker_id' AFTER `task_tasker_id` 
+
+ALTER TABLE gc_dta_task ADD COLUMN task_eta datetime COMMENT 'expected estimated date' AFTER `task_assigned_on` 
+
+
+ALTER TABLE gc_dta_task_tasker ADD COLUMN tasker_comments varchar( 4000 ) DEFAULT NULL COMMENT 'tasker comments e.g. proposal' AFTER `poster_comments` 
+
+#increase in varchar sizes
+ALTER TABLE `gc_dta_task` CHANGE `attachments` `attachments` VARCHAR( 2000 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'ARRAY of JSON objects [{"type":"<attachment_type>", "file":"<filename>","upload_on":"<date of upload>"}], type can be ''p''- pdf, ''w'' - word, ''a''- audio, ''v''-video, ''i'' - image';
+
+ALTER TABLE `gc_dta_task_tasker` CHANGE `attachments` `attachments` VARCHAR( 2000 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ;
+
+ALTER TABLE `gc_dta_user` CHANGE `prefereces_setting` `prefereces_setting` VARCHAR( 4000 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ;
+
+ALTER TABLE `gc_dta_user` CHANGE `timezone` `timezone` VARCHAR( 50 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ;
+
+ALTER TABLE `gc_mst_category_locale` CHANGE `task_templates` `task_templates` VARCHAR( 6000 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ;
+
+ALTER TABLE `gc_mst_category_question_locale` CHANGE `expected_answer_desc` `expected_answer_desc` VARCHAR( 1000 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ;
+
+ALTER TABLE `gc_dta_task_tasker` CHANGE `poster_comments` `poster_comments` VARCHAR( 1000 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ;
+
+
+
+
+#create table gc_dta_user_work_location
+CREATE TABLE IF NOT EXISTS `gc_dta_user_work_location` (
+`user_id` bigint(20) NOT NULL,
+`country_code` char(2) DEFAULT NULL,
+`state_id` int(11) DEFAULT NULL,
+`region_id` int(11) DEFAULT NULL,
+`city_id` int(11) DEFAULT NULL,
+`created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`status` char(1) DEFAULT 'a',
+`source_app` varchar(10) DEFAULT NULL,
+PRIMARY KEY (`user_id`, `country_code`),
+KEY `gc_dta_user_work_location_idx1` (`state_id`),
+KEY `gc_dta_user_work_location_idx2` (`region_id`),
+KEY `gc_dta_user_work_location_idx3` (`city_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+#add foreign key on user_id
+ALTER TABLE `gc_dta_user_work_location` ADD FOREIGN KEY `fk_dta_user_work_location_user_id` (`user_id`) REFERENCES `gc_dta_user` (`user_id`);
+
+
+ALTER TABLE `gc_dta_user_alert` CHANGE `seen_at` `seen_at` TIMESTAMP NULL DEFAULT NULL COMMENT 'when ''for_user_id'' has seen the alert?';
+
+ALTER TABLE `gc_dta_user_alert` CHANGE `updated_at` `updated_at` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ;
+
+#add date fields for reviews and index them
+ALTER TABLE `gc_dta_task` ADD `tasker_review_dt` DATETIME NULL AFTER `poster_review_comments` ,
+ADD `poster_review_dt` DATETIME NULL AFTER `tasker_review_dt`;
+
+Alter table `gc_dta_task` ADD INDEX `poster_review_dt` (`poster_review_dt`);
+Alter table `gc_dta_task` ADD INDEX `tasker_review_dt` (`tasker_review_dt`);
+
+
+ALTER TABLE `gc_dta_task` CHANGE `valid_from_dt` `valid_from_dt` DATETIME NULL DEFAULT NULL ,
+CHANGE `valid_to_dt` `valid_to_dt` DATETIME NULL DEFAULT NULL ;
+
+#added to manage accepted proposals count
+ALTER TABLE `gc_dta_task` ADD `proposals_accpt_cnt` INT( 11 ) UNSIGNED NOT NULL DEFAULT '0' AFTER `proposals_cnt` ;
+
+25-03-2014
+#removed these fields from dta_tasks table and added in task_tasker table because there might be more than one assigned tasker for the same task
+ALTER TABLE `gc_dta_task_tasker` ADD `tasker_review_comments` VARCHAR( 2000 ) NULL AFTER `tasker_comments` ,
+ADD `poster_review_comments` VARCHAR( 2000 ) NULL AFTER `tasker_review_comments` ,
+ADD `tasker_review_dt` DATETIME NULL AFTER `poster_review_comments` ,
+ADD `poster_review_dt` DATETIME NULL AFTER `tasker_review_dt` ;
+ 
+ 
+ 
+ 
+ 
+##changed current_timestamp field if exists more than one in single table 
+ALTER TABLE `gc_dta_user_alert` CHANGE `updated_at` `updated_at` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL ;

@@ -1,0 +1,1 @@
+<a id="markRead<?php echo $taskId ?>" onclick="markRead(<?php echo $taskId ?>)" class="interested_btn" href="javascript:void(0)"><?php echo Yii::t('tasker_mytasks', 'Mark read')?></a>

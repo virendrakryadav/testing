@@ -1,0 +1,112 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+    font-family: 'RobotoRegular';
+    src: url('./font/roboto-regular.eot');
+    src: url('./font/roboto-regular.eot') format('embedded-opentype'),
+         url('./font/roboto-regular.woff') format('woff'),
+         url('./font/roboto-regular.ttf') format('truetype'),
+         url('./font/roboto-regular.svg#RobotoRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'CambriaRegular';
+    src: url('./font/cambria.eot');
+    src: url('./font/cambria.eot') format('embedded-opentype'),
+         url('./font/cambria.woff') format('woff'),
+         url('./font/cambria.ttf') format('truetype'),
+         url('./font/cambria.svg#CambriaRegular') format('svg');
+}
+
+
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('./font/opensans-regular.eot');
+    src: url('./font/opensans-regular.eot') format('embedded-opentype'),
+         url('./font/opensans-regular.woff') format('woff'),
+         url('./font/opensans-regular.ttf') format('truetype'),
+         url('./font/opensans-regular.svg#OpenSansRegular') format('svg');
+}
+
+
+
+img{ border:none;}
+body { font-family:RobotoRegular; color:#333333; font-size:12px; margin:0px; padding:0px;  background:#fff; /*url(../../images/user-account-bg.jpg) no-repeat top center !important; background-size:100% !important;*/}
+/*.............Commen css............*/
+.wrapper{ width:100%; height:auto; margin:0 auto; /*position:relative;*/}
+.content_wrap{ width:1280px; height:auto; margin:0 auto;}
+
+/*.............Header css............*/
+
+.header{padding:23px 0; background:#333333; overflow:hidden; border:solid 1px #666666; position:fixed; left:0; right:0;}
+.logo{ float:left;}
+.needhelp{ float:left; padding:2px 0 0 60px;}
+.needhelp a{font-size:16px; color:#fff; text-decoration:none; }
+.needhelp a:hover{font-size:16px; color:#fff; text-decoration: underline;}
+.signin_cont{ float:right;}
+.signin{ float:left; padding:2px 0 0 23px;}
+.signin a{ color:#fff; text-transform:uppercase; font-size:13px; font-weight:bold; text-decoration:none; }
+.signin a:hover{ color:#52a072;}
+
+
+/*.............create account css............*/
+
+.sign_bg{ width:100%; background:url(../../images/user-account-bg.jpg) no-repeat center; background-size:100%; height:768px;}
+.create_account{ width:100%; height:auto; margin:0px auto; overflow:hidden;}
+.create_account_popup{ width:100%; height:auto; min-height:528px; margin:0 auto; overflow:hidden; background:#fff; box-shadow: 0px 2px 6px #4f4f4f;}
+.popup_head{padding:11px 20px; background:#2d8752; overflow:hidden;}
+.popup_head span{ float:right; border:none; margin:5px 0;}
+.heading{ margin:0px; padding:0px; color:#fff; font-size:24px; float:left; font-weight:normal;}
+.create_acunt_inner{height:auto;margin:0px auto; overflow:hidden; padding:20px;}
+.create_acunt_left{height:auto; width:465px; float:left;}
+.create_acunt_col1{height:auto; width:465px; float:left; padding:0 0 20px 0;}
+.create_log_fb{height:auto; width:465px; float:left;}
+.create_acunt_right{height:auto; width:330px; float:right; margin:0 0 0 30px;}
+.sign_form{ width:330px; float:left;}
+.sign_form p{ margin:0px; padding:20px 0 0 0; font-size:14px;}.signin{ line-height:22px;}.forgotpassword{ float:right}
+.sign_row{ width:100%; float:left; padding:20px 0 0 0;}
+.sign_row input,select{ width:90%;padding:15px; border:solid 1px #bdbcbd; background:#f7f7f7;}
+.sign_row_name{ width:100%; float:left; padding:20px 0 0 0;}
+.sign_row_name input{ width:38.7%;padding:15px; border:solid 1px #bdbcbd; background:#f7f7f7;}
+.sign_row2 input{ margin:-2px 10px 0 0;}
+.sign_row2{ width:100%; float:left; padding:20px 0 0 0; font-size:14px;}
+.bluetext{ color:#0088cc;}
+.bluetext a{ color:#0088cc;}
+.sign_bnt{ padding:7px 9px; background:#0088cc; font-size:16px; color:#fff; border:none; cursor:pointer; border:1px solid #0088cc;}
+.sign_bnt:hover{background:#333333;border:1px solid #333;}
+.cnl_btn{ padding:7px 9px; background:#fff; font-size:16px; color:#333; border:none; cursor:pointer;border:1px solid #B3B3B3;}
+.cnl_btn:hover{ background:linear-gradient(to bottom, #FFFFFF, #E6E6E6) repeat scroll 0 0 rgba(0, 0, 0, 0); color:#333333; border:1px solid #B3B3B3;}
+.lightbox { display: block; }
+
+.banner{ width:100%; height:auto; margin:0 auto; text-align:center;}
+.banner img{ width:100%; height:auto;}
+.overview{ width:100%; height:auto; margin:0 auto; text-align:center; background:#fff; }
+.feature{ width:100%; height:auto; margin:0 auto; text-align:center; background:#f5f3f1; }
+.howitwork{ width:100%; height:auto; margin:0 auto; text-align:center; background:#fff;  -moz-box-shadow:inset 5px 6px 7px #e4e1e1;
+-webkit-box-shadow: inset 5px 6px 7px #e4e1e1; box-shadow: inset 5px 6px 7px #e4e1e1;}
+.testimonial{ width:100%; height:auto; margin:0 auto; text-align:center;}
+.map{ width:100%; height:auto; margin:0 auto; text-align:center;}
+.map img{ width:100%; height:auto;}
+.footer{ width:100%; height:auto; margin:0 auto; text-align:center; }
+.footer_nav{ width:100%; text-align:center; padding:14px 0;background:#333333;}
+.footer_nav a{padding:0 15px; color:#9b9b9b; text-decoration:none; line-height:20px;}.footer_nav a:hover{padding:0 15px; color:#fff; text-decoration: underline;}
+.errorMessage{ color:#FF0000 !important; font-size:12px; padding:5px 0 0 0;}
+.window {
+    background: none repeat scroll 0 0 #FFFFFF;
+    /* border: 10px solid #404040;
+   border-radius: 3px;*/
+    box-shadow: 0 0 15px #000000;
+  /*  left: 18%;*/
+    min-height: 160px !important;
+   /* padding: 20px;*/
+    position: absolute;
+    top: 20%;
+    /*width: 60% !important;*/
+    z-index: 10000;
+}
+#dialog{ width:60%; margin:0 auto;} 
+
+.create_log_fb a{ display:block; float:left; padding:15px 10px 15px 64px; color:#fff; font-size:16px; text-align:center; text-decoration:none;}
+.log_fb{ background: url(../../images/login-with-facebook.jpg) no-repeat;}
+.log_google{ background: url(../../images/login-with-google.jpg) no-repeat;}
+

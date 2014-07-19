@@ -1,0 +1,40 @@
+<?php 
+$this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+//		'user_id',
+		'firstname',
+		'lastname',
+		'email',
+		//'password',
+		'mobile',
+            'task_post_count',
+              'task_done_count',
+             'rank',
+            'task_done_rank',
+            'task_post_rank',
+//            'account_type',
+            array(
+                    'header'=>'Account Type',
+                    'name'=>'account_type',
+                'value'=>CommonUtility::getUserAccountType($model->account_type),                
+                ),
+//"CommonUtility::isPremium(".$model['user_id'].")",
+            'task_post_total_price',
+            'task_post_total_hours',
+            'task_post_cancel_cnt',
+            'task_post_cancel_price',
+//		'country_id',
+//		'state_id',
+//		'city_name',
+//		'zip_code',
+//		'user_status',
+//		'is_verify',
+//		'user_created_at',
+//		'user_updated_at',
+//		'user_image',
+//		'user_video',
+	),
+)); 
+
+?>  

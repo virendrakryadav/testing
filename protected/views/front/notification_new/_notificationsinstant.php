@@ -1,0 +1,12 @@
+<div class="notify_wrap" >
+    <div class="items">
+        <!--Notifications start here-->
+            <?php $this->widget('zii.widgets.CListView', array(
+                    'dataProvider' => $notifications->getInstantTaskNotification(),
+                    'itemView' => '//partial/_notificationslist',
+                    'emptyText' => Yii::t('notifications','msg_no_instant_notification'),
+                ));
+                ?>
+        <!--Notifications ends here-->                     
+    </div>
+</div>  

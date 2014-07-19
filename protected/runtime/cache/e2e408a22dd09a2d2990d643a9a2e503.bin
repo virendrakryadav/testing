@@ -1,0 +1,144 @@
+a:2:{i:0;a:2:{i:0;s:7914:"<!--Instant task category start here-->
+<script>
+    $(document).ready(function(){
+        $('.slider1').bxSlider({
+            slideWidth: 164,
+            minSlides: 5,
+            maxSlides: 5,
+            slideMargin: 0,
+             moveSlides: 5,
+            auto: true,
+            autoHover: true,
+            autoControls: true
+                
+        });
+    });
+</script>
+<div class="controls-row pdn2">
+    <h3 class="h3 bottom_border">Choose instant task category  </h3>
+    <div class="controls-row cnl_space">
+                            <div class="slider1">
+                                <div class="slide">
+                        <div id="category_21" class="task_cat  cat_bg1 ">
+                   
+                            <a id="loadinstantcategory_21" onclick="loadCategoryFormScript('/greencometdev/poster/loadcategoryform' ,21 , 0 , 'instant' )" href="#">
+                                <div class="cat_img">
+                                    <img src="http://192.168.1.200:8080/greencometdev/catg/21/21-restaurant-delivery">
+                                </div>
+                                <p>
+                                    Restaurant Delivery</p>
+                            </a>
+                        </div>
+                    </div>
+                                                <div class="slide">
+                        <div id="category_22" class="task_cat  cat_bg2 ">
+                   
+                            <a id="loadinstantcategory_22" onclick="loadCategoryFormScript('/greencometdev/poster/loadcategoryform' ,22 , 0 , 'instant' )" href="#">
+                                <div class="cat_img">
+                                    <img src="http://192.168.1.200:8080/greencometdev/catg/22/22-shipping">
+                                </div>
+                                <p>
+                                    Shipping</p>
+                            </a>
+                        </div>
+                    </div>
+                                                <div class="slide">
+                        <div id="category_28" class="task_cat  cat_bg1 ">
+                   
+                            <a id="loadinstantcategory_28" onclick="loadCategoryFormScript('/greencometdev/poster/loadcategoryform' ,28 , 0 , 'instant' )" href="#">
+                                <div class="cat_img">
+                                    <img src="http://192.168.1.200:8080/greencometdev/catg/28/28-snow-removal">
+                                </div>
+                                <p>
+                                    Snow Removal</p>
+                            </a>
+                        </div>
+                    </div>
+                                                <div class="slide">
+                        <div id="category_30" class="task_cat  cat_bg2 ">
+                   
+                            <a id="loadinstantcategory_30" onclick="loadCategoryFormScript('/greencometdev/poster/loadcategoryform' ,30 , 0 , 'instant' )" href="#">
+                                <div class="cat_img">
+                                    <img src="http://192.168.1.200:8080/greencometdev/catg/30/30-landscaping">
+                                </div>
+                                <p>
+                                    Landscaping</p>
+                            </a>
+                        </div>
+                    </div>
+                                                <div class="slide">
+                        <div id="category_31" class="task_cat  cat_bg1 ">
+                   
+                            <a id="loadinstantcategory_31" onclick="loadCategoryFormScript('/greencometdev/poster/loadcategoryform' ,31 , 0 , 'instant' )" href="#">
+                                <div class="cat_img">
+                                    <img src="http://192.168.1.200:8080/greencometdev/catg/31/31-pet-care">
+                                </div>
+                                <p>
+                                    Pet Care</p>
+                            </a>
+                        </div>
+                    </div>
+                                                <div class="slide">
+                        <div id="category_32" class="task_cat  cat_bg2 ">
+                   
+                            <a id="loadinstantcategory_32" onclick="loadCategoryFormScript('/greencometdev/poster/loadcategoryform' ,32 , 0 , 'instant' )" href="#">
+                                <div class="cat_img">
+                                    <img src="http://192.168.1.200:8080/greencometdev/catg/32/32-dog-walking">
+                                </div>
+                                <p>
+                                    Dog Walking</p>
+                            </a>
+                        </div>
+                    </div>
+                                                <div class="slide">
+                        <div id="category_34" class="task_cat  cat_bg1 ">
+                   
+                            <a id="loadinstantcategory_34" onclick="loadCategoryFormScript('/greencometdev/poster/loadcategoryform' ,34 , 0 , 'instant' )" href="#">
+                                <div class="cat_img">
+                                    <img src="http://192.168.1.200:8080/greencometdev/catg/34/34-instruction">
+                                </div>
+                                <p>
+                                    Instruction</p>
+                            </a>
+                        </div>
+                    </div>
+                                                <div class="slide">
+                        <div id="category_64" class="task_cat  cat_bg2 ">
+                   
+                            <a id="loadinstantcategory_64" onclick="loadCategoryFormScript('/greencometdev/poster/loadcategoryform' ,64 , 0 , 'instant' )" href="#">
+                                <div class="cat_img">
+                                    <img src="http://192.168.1.200:8080/greencometdev/catg/64/64-home-delivery">
+                                </div>
+                                <p>
+                                    Home Delivery</p>
+                            </a>
+                        </div>
+                    </div>
+                                                <div class="slide">
+                        <div id="category_66" class="task_cat  cat_bg1 ">
+                   
+                            <a id="loadinstantcategory_66" onclick="loadCategoryFormScript('/greencometdev/poster/loadcategoryform' ,66 , 0 , 'instant' )" href="#">
+                                <div class="cat_img">
+                                    <img src="http://192.168.1.200:8080/greencometdev/catg/66/66-taxi">
+                                </div>
+                                <p>
+                                    Taxi</p>
+                            </a>
+                        </div>
+                    </div>
+                                                <div class="slide">
+                        <div id="category_68" class="task_cat  cat_bg2 ">
+                   
+                            <a id="loadinstantcategory_68" onclick="loadCategoryFormScript('/greencometdev/poster/loadcategoryform' ,68 , 0 , 'instant' )" href="#">
+                                <div class="cat_img">
+                                    <img src="http://192.168.1.200:8080/greencometdev/catg/68/68-gardening">
+                                </div>
+                                <p>
+                                    Gardening</p>
+                            </a>
+                        </div>
+                    </div>
+                                        </div>
+                    </div>
+</div><!--Instant task category Ends here-->
+";i:1;N;}i:1;N;}

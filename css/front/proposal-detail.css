@@ -1,0 +1,41 @@
+/*
+
+Uniform Theme: Proposal Dwetail Page
+Version: 1.8
+By: Josh Pyles
+License: MIT License
+---
+For use with the Uniform plugin:
+http://uniformjs.com/
+
+*/
+/* General settings */
+ul.yiiPager .first a:link, ul.yiiPager a:visited {
+   display: none !important;
+}
+ul.yiiPager .last {
+  display: none !important;
+}
+.pager {
+    left: 1px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.previous {
+    left: 6px;
+    position: absolute; top:8px;
+}
+.next {
+    position: absolute;
+    right: 6px; top:8px;
+}
+ul.yiiPager a:link, ul.yiiPager a:visited {
+    border : none !important ;
+    color: #fff !important ;
+    padding: inherit !important ;
+}
+.pager li > a, .pager li > span 
+{
+    background-color: inherit !important ;
+}
